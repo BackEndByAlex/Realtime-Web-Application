@@ -1,0 +1,39 @@
+<link rel="stylesheet" href="./css/showIssue.css">
+<script src="./js/showIssue.js"></script>
+
+
+
+<main>
+  <div class="issue-details-container">
+    <h2>Issue #<%= issue.iid %></h2>
+
+    <div class="issue-author">
+      <img src="<%= issue.author.avatar_url %>" alt="Avatar of <%= issue.author.name %>" class="avatar">
+      <span><strong><%= issue.author.name %></strong></span>
+    </div>
+    
+    <p class="title"><strong>Title:</strong> <%= issue.title %></p>
+    <p class="status"><strong>Status:</strong> 
+      <span class="issue-status <%= issue.state %>"><%= issue.state %></span>
+    </p>
+
+    <p class="description-title"><strong>Description:</strong></p>
+    <p class="description">
+      <% let descriptionWithoutChecklist = issue.description.replace(/- \[[ x]\] .*/g, "").trim() %>
+      <%= descriptionWithoutChecklist || "No description provided." %>
+    </p>
+
+    <%- include('../partials/checklist', { issue }) %>
+
+    <div id="button-container">
+      <% if (issue.state === 'closed') { %>
+        <button class="button reopen-btn" data-issue-id="<%= issue.iid %>">Reopen Issue</button>
+      <% } else { %>
+        <button class="button close-btn" id="close-issue-btn" data-issue-id="<%= issue.iid %>">Close Issue</button>
+      <% } %>
+    </div>
+    
+    
+    <a href="./issues" class="button back-link">← Back to Issues</a>
+  </div>
+</main>

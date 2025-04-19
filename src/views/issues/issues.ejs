@@ -1,0 +1,23 @@
+<link rel="stylesheet" href="./css/issues.css">
+<script src="./js/Issues.js"></script>
+
+<main>
+  <div class="issues-container">
+    <h2>Project Issues</h2>
+    <ul id="issues-list">
+      <% if (issues && issues.length > 0) { %>
+        <% issues.forEach(issue => { %>
+          <li data-id="<%= issue.iid %>">
+            <a href="./issues/showIssue/<%= issue.iid %>" class="issue-link">
+              <strong>#<%= issue.iid %>: <%= issue.title %></strong>
+            </a>
+            <span class="issue-status" data-id="<%= issue.iid %>"><%= issue.state %></span>
+          </li>          
+        <% }) %>
+      <% } else { %>
+        <li>Inga issues hittades.</li>
+      <% } %>
+    </ul>
+  </div>
+</main>
+

@@ -1,0 +1,20 @@
+<p class="description-title"><strong>Checklist:</strong></p>
+<ul class="checklist">
+  <% if (issue.description) { %>
+    <% issue.description.split("\n").forEach(line => { %>
+      <% if (line.startsWith("- [")) { %>
+        <li class="checklist-item">
+          <input 
+            type="checkbox"
+            class="checklist-checkbox"
+            disabled
+            <%= line.includes("[x]") ? "checked" : "" %>
+          >
+          <span><%= line.replace('- [x] ', '').replace('- [ ] ', '') %></span>
+        </li>
+      <% } %>
+    <% }) %>
+  <% } else { %>
+    <p>No checklist items.</p>
+  <% } %>
+</ul>

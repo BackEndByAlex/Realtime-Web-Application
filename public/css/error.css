@@ -1,0 +1,30 @@
+.error-container {
+  text-align: center;
+  margin-top: 50px;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  color: #d9534f;
+  font-size: 2rem;
+}
+
+p {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.error-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.error-btn:hover {
+  background-color: #0056b3;
+}

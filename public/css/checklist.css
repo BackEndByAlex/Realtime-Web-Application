@@ -1,0 +1,48 @@
+/* 📌 Förbättrar checklist-layout */
+.checklist {
+  list-style: none; /* Tar bort punkterna */
+  padding: 0;
+  margin-top: 10px;
+}
+
+.checklist-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 5px 0;
+  font-size: 14px;
+}
+
+.checklist-item input {
+  transform: scale(1.2); /* Gör checkboxen lite större */
+}
+
+.checklist-form {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.checklist-form input[type="text"] {
+  flex: 1;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.checklist-form input[type="checkbox"] {
+  transform: scale(1.2);
+}
+
+.checklist-form button {
+  background: #5bc0de;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.checklist-form button:hover {
+  background: #31b0d5;
+}
